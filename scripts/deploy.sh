@@ -47,6 +47,7 @@ echo "==> 推送到 main"
 git push "https://x-access-token:${TOKEN}@github.com/LouisChenYiqiao/LouisChenYiqiao.github.io.git" main:main \
   || { echo "❌ push 失败"; exit 1; }
 
-git update-ref refs/remotes/origin/main FETCH_HEAD 2>/dev/null || true
+# push 成功后，将本地 origin/main 引用同步到当前 HEAD（即 push 后的远端状态）
+git update-ref refs/remotes/origin/main HEAD 2>/dev/null || true
 
 echo "✅ 部署完成 → https://louischenyiqiao.github.io"
