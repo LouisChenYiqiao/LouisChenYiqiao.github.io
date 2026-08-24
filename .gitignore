@@ -8,3 +8,14 @@ __pycache__/
 # 备份旧站点（若本地存在）
 *-mobirise.bak
 project.mobirise
+
+# ===== 密钥与敏感凭据（严防上传）=====
+secrets/
+*.token
+*.secret
+.env
+.env.*
+.github-token
+github.token
+*.pem
+*.key
