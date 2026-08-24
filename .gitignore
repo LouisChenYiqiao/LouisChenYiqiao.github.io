@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# 本地 Python 预览
+__pycache__/
+*.pyc
+
+# 备份旧站点（若本地存在）
+*-mobirise.bak
+project.mobirise
