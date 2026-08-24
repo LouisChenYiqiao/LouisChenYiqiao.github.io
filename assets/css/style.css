@@ -234,6 +234,11 @@ img { max-width: 100%; display: block; }
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
+.contact-grid--single {
+  grid-template-columns: 1fr;
+  max-width: 420px;
+  margin: 0 auto;
+}
 .contact-card {
   background: var(--bg);
   border: 1px solid var(--border);
