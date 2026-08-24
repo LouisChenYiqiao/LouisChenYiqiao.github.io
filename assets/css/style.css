@@ -3,18 +3,18 @@
    ========================================================================== */
 
 :root {
-  --primary: #2d6cdf;
-  --primary-deep: #5a45d0;
-  --accent: #f0f4ff;
-  --text: #1f2430;
-  --text-muted: #5a6072;
-  --bg: #ffffff;
-  --bg-soft: #f6f8fc;
-  --border: #e6e9f0;
+  --primary: #c8822a;
+  --primary-deep: #9e6829;
+  --accent: #f9f2e5;
+  --text: #2b2117;
+  --text-muted: #6b5f4f;
+  --bg: #fffdf8;
+  --bg-soft: #f8f3ea;
+  --border: #e8dfd2;
   --radius: 16px;
   --shadow: 0 10px 30px rgba(30, 40, 70, 0.08);
   --shadow-lg: 0 20px 50px rgba(30, 40, 70, 0.14);
-  --grad: linear-gradient(135deg, #2d6cdf 0%, #5a45d0 100%);
+  --grad: linear-gradient(135deg, #dfa64b 0%, #c8822a 100%);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -96,7 +96,7 @@ img { max-width: 100%; display: block; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(rgba(24, 32, 55, 0.55), rgba(24, 32, 55, 0.65)), url("../images/20230312213234.jpeg");
+  background-image: linear-gradient(rgba(46, 30, 12, 0.35), rgba(30, 18, 5, 0.62)), url("../images/20230312213234.jpeg");
   background-size: cover;
   background-position: center;
   z-index: 1;
@@ -145,8 +145,8 @@ img { max-width: 100%; display: block; }
   cursor: pointer;
 }
 .btn-primary {
-  background: linear-gradient(135deg, #fff, #eef2ff);
-  color: var(--primary);
+  background: linear-gradient(135deg, #e7b25c, #cf8a2e);
+  color: #fff;
   box-shadow: var(--shadow-lg);
 }
 .btn-ghost {
@@ -181,18 +181,11 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---------- 关于 ---------- */
-.about-grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 56px;
-  align-items: center;
+.about-text {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
 }
-.about-photo {
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-}
-.about-photo img { width: 100%; height: 100%; object-fit: cover; }
 .about-text h3 {
   font-size: 24px;
   font-weight: 700;
@@ -208,25 +201,6 @@ img { max-width: 100%; display: block; }
 }
 .info-list .k { width: 88px; color: var(--text-muted); font-size: 14px; flex-shrink: 0; }
 .info-list .v { font-weight: 500; }
-
-/* ---------- 工作 ---------- */
-.works-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-.work-card {
-  background: var(--bg);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: transform .25s, box-shadow .25s;
-}
-.work-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
-.work-card img { width: 100%; height: 220px; object-fit: cover; }
-.work-card .body { padding: 22px; }
-.work-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
-.work-card p { font-size: 14px; color: var(--text-muted); }
 
 /* ---------- 联系方式 ---------- */
 .contact-grid {
@@ -266,7 +240,7 @@ img { max-width: 100%; display: block; }
 
 /* ---------- 页脚 ---------- */
 .footer {
-  background: #141a2e;
+  background: #1c140d;
   color: rgba(255,255,255,.7);
   padding: 36px 0;
   text-align: center;
@@ -274,12 +248,10 @@ img { max-width: 100%; display: block; }
 }
 .footer .brand { -webkit-text-fill-color: #fff; }
 .footer p { margin-top: 8px; }
-.footer a { color: #9ab8ff; }
+.footer a { color: #e8b86a; }
 
 /* ---------- 响应式 ---------- */
 @media (max-width: 860px) {
-  .about-grid { grid-template-columns: 1fr; }
-  .works-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .nav-links { gap: 20px; }
 }
