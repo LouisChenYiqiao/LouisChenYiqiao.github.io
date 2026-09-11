@@ -35,6 +35,12 @@ echo "==> 拉取远端最新状态"
 git fetch "https://x-access-token:${TOKEN}@github.com/LouisChenYiqiao/LouisChenYiqiao.github.io.git" main \
   || { echo "❌ fetch 失败，请检查 token 是否有效"; exit 1; }
 
+# 防止在远端已有本地未同步提交时，意外覆盖线上内容。
+if ! git merge-base --is-ancestor FETCH_HEAD HEAD; then
+  echo "❌ 远端 main 含有本地尚未同步的提交。请先拉取并处理后再部署。" >&2
+  exit 1
+fi
+
 echo "==> 暂存并提交"
 git add -A
 if git diff --cached --quiet; then

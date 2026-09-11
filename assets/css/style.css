@@ -19,7 +19,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 82px; }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
@@ -33,6 +33,26 @@ body {
 a { color: inherit; text-decoration: none; }
 
 img { max-width: 100%; display: block; }
+
+a:focus-visible {
+  outline: 3px solid #6b461b;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 200;
+  top: 12px;
+  left: 12px;
+  padding: 10px 14px;
+  color: #fff;
+  background: var(--primary-deep);
+  border-radius: 8px;
+  transform: translateY(-160%);
+  transition: transform .2s;
+}
+.skip-link:focus { transform: translateY(0); }
 
 .shell {
   max-width: 1080px;
@@ -74,6 +94,7 @@ img { max-width: 100%; display: block; }
   position: relative;
 }
 .nav-links a:hover { color: var(--primary); }
+.nav-links a:focus-visible { color: var(--primary); }
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -83,6 +104,7 @@ img { max-width: 100%; display: block; }
   transition: width .25s;
 }
 .nav-links a:hover::after { width: 100%; }
+.nav-links a:focus-visible::after { width: 100%; }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -164,7 +186,7 @@ img { max-width: 100%; display: block; }
 
 /* ---------- 通用 section ---------- */
 .section { padding: 90px 0; }
-.section-alt { background: var(--bg-soft); }
+.section--tinted { background: var(--bg-soft); }
 .section-head { text-align: center; margin-bottom: 56px; }
 .section-head .eyebrow {
   font-size: 13px;
@@ -227,6 +249,7 @@ img { max-width: 100%; display: block; }
   transition: transform .2s, box-shadow .2s;
 }
 .contact-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.contact-card:focus-within { box-shadow: var(--shadow); }
 .contact-card .icon {
   width: 52px; height: 52px;
   margin: 0 auto 16px;
@@ -289,4 +312,9 @@ img { max-width: 100%; display: block; }
   .section-head p { font-size: 15px; }
   .about-text h3 { font-size: 21px; }
   .about-text p { font-size: 15px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
