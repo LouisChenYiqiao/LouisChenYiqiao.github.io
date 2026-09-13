@@ -6,8 +6,7 @@
   <meta name="description" content="LouisQiao 的个人主页，记录生活与创作。">
   <meta name="theme-color" content="#c8822a">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="permissions-policy" content="camera=(), microphone=(), geolocation=()">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'none'; font-src 'self'; media-src 'none'; object-src 'none'; worker-src 'none'; upgrade-insecure-requests">
   <title>LouisQiao</title>
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -26,19 +25,19 @@
     </nav>
   </header>
 
-  <main id="main-content">
-  <section class="hero" id="top" aria-labelledby="hero-title">
-    <div class="hero-bg"></div>
-    <div class="shell hero-content">
-      <span class="hero-kicker">Hello，欢迎来访</span>
-      <h1 id="hero-title">我是 <span class="hero-name">LouisQiao</span></h1>
-      <p>一个普普通通的大学生。这里记录属于我自己的生活、创作与思考。</p>
-      <div class="buttons">
-        <a class="btn btn-primary" href="#about">了解我</a>
-        <a class="btn btn-ghost" href="#contact">联系我</a>
+  <main id="main-content" tabindex="-1">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-bg"></div>
+      <div class="shell hero-content">
+        <span class="hero-kicker">Hello，欢迎来访</span>
+        <h1 id="hero-title">我是 <span class="hero-name">LouisQiao</span></h1>
+        <p>一个普普通通的大学生。这里记录属于我自己的生活、创作与思考。</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#about">了解我</a>
+          <a class="btn btn-ghost" href="#contact">联系我</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
   <section class="section" id="about" aria-labelledby="about-title">
     <div class="shell">
@@ -48,15 +47,15 @@
         <p>关于这个网站，以及我是谁。</p>
       </div>
       <div class="about-text">
-          <h3>你好，我是LouisQiao</h3>
-          <p>2023 年 3 月 12 日，植树节当天，我创建了这个网站。那阵子刚刚结束一个漫长的寒假，也刚刚熬过被疫情推迟的考试周，偶然间心血来潮，花了一个下午把它搭了起来。</p>
-          <p>这个网站记录的是我的生活与成长。希望能在这里，与你分享我的故事。</p>
-          <ul class="info-list">
-            <li><span class="k">姓名</span><span class="v">LouisQiao</span></li>
-            <li><span class="k">身份</span><span class="v">大学生</span></li>
-            <li><span class="k">坐标</span><span class="v">中国</span></li>
-            <li><span class="k">兴趣</span><span class="v">设计 · 记录 · 创作</span></li>
-          </ul>
+        <h3>你好，我是 LouisQiao</h3>
+        <p>2023 年 3 月 12 日，植树节当天，我创建了这个网站。那阵子刚刚结束一个漫长的寒假，也刚刚熬过被疫情推迟的考试周，偶然间心血来潮，花了一个下午把它搭了起来。</p>
+        <p>这个网站记录的是我的生活与成长。希望能在这里，与你分享我的故事。</p>
+        <dl class="info-list">
+          <div><dt>姓名</dt><dd>LouisQiao</dd></div>
+          <div><dt>身份</dt><dd>大学生</dd></div>
+          <div><dt>坐标</dt><dd>中国</dd></div>
+          <div><dt>兴趣</dt><dd>设计 · 记录 · 创作</dd></div>
+        </dl>
       </div>
     </div>
   </section>

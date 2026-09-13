@@ -12,7 +12,7 @@ REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 # Agent 工作区根目录（仓库的上一级）
 AGENT_ROOT="$(cd "${REPO_ROOT}/.." && pwd)"
 TOKEN_FILE="${AGENT_ROOT}/secrets/github.token"
-REMOTE="https://github.com/LouisChenYiqiao/LouisChenYiqiao.github.io.git"
+REMOTE="https://x-access-token@github.com/LouisChenYiqiao/LouisChenYiqiao.github.io.git"
 
 # 提交信息：可传参，否则使用默认值
 COMMIT_MSG="${1:-更新: $(date '+%Y-%m-%d %H:%M')}"
@@ -29,10 +29,20 @@ if [ -z "$TOKEN" ]; then
   exit 1
 fi
 
+# 将令牌通过一次性 askpass 程序交给 Git，避免它出现在 git 命令参数或远端 URL 中。
+ASKPASS_FILE="$(mktemp "${TMPDIR:-/tmp}/louischenyiqiao-git-askpass.XXXXXX")"
+trap 'rm -f "$ASKPASS_FILE"' EXIT
+printf '%s\n' '#!/usr/bin/env bash' 'printf "%s\\n" "$GITHUB_TOKEN"' > "$ASKPASS_FILE"
+chmod 700 "$ASKPASS_FILE"
+export GIT_ASKPASS="$ASKPASS_FILE"
+export GIT_TERMINAL_PROMPT=0
+export GITHUB_TOKEN="$TOKEN"
+unset TOKEN
+
 cd "$REPO_ROOT"
 
 echo "==> 拉取远端最新状态"
-git fetch "https://x-access-token:${TOKEN}@github.com/LouisChenYiqiao/LouisChenYiqiao.github.io.git" main \
+git fetch "$REMOTE" main \
   || { echo "❌ fetch 失败，请检查 token 是否有效"; exit 1; }
 
 # 防止在远端已有本地未同步提交时，意外覆盖线上内容。
@@ -50,7 +60,7 @@ else
 fi
 
 echo "==> 推送到 main"
-git push "https://x-access-token:${TOKEN}@github.com/LouisChenYiqiao/LouisChenYiqiao.github.io.git" main:main \
+git push "$REMOTE" main:main \
   || { echo "❌ push 失败"; exit 1; }
 
 # push 成功后，将本地 origin/main 引用同步到当前 HEAD（即 push 后的远端状态）

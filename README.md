@@ -51,3 +51,7 @@ git push
 3. GitHub Pages 会自动从 `main` 分支根目录重新发布网站。
 
 详细说明见 [`docs/维护说明.md`](docs/维护说明.md)。
+
+## 安全说明
+
+页面使用仅限本站资源的 Content Security Policy，并提供[安全维护说明](docs/维护说明.md#六安全与凭据pat管理)。部署凭据仅保存在仓库外的本地目录中。
