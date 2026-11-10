@@ -119,7 +119,7 @@ a:focus-visible {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 72% 32%, rgba(236, 185, 93, .18), transparent 35%), linear-gradient(rgba(46, 30, 12, 0.35), rgba(30, 18, 5, 0.62)), url("../images/20230312213234.jpeg");
+  background-image: radial-gradient(circle at 72% 32%, rgba(236, 185, 93, .18), transparent 35%), linear-gradient(rgba(46, 30, 12, 0.35), rgba(30, 18, 5, 0.62)), url("../images/sunset-walk.jpeg");
   background-size: cover;
   background-position: center 42%;
   z-index: 1;
@@ -220,38 +220,20 @@ a:focus-visible {
   margin-bottom: 16px;
 }
 .about-text p { color: var(--text-muted); margin-bottom: 14px; }
-.info-list { margin-top: 24px; }
-.info-list div {
-  padding: 12px 0;
-  border-bottom: 1px dashed var(--border);
-  display: flex;
-  gap: 12px;
-}
-.info-list dt { width: 88px; color: var(--text-muted); font-size: 14px; flex-shrink: 0; }
-.info-list dd { font-weight: 500; }
-
-/* ---------- 联系方式 ---------- */
-.contact-grid {
+/* ---------- 日常与创作 ---------- */
+.notes-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
-.contact-grid--single {
-  grid-template-columns: 1fr;
-  max-width: 420px;
-  margin: 0 auto;
-}
-.contact-card {
+.note-card {
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 30px 26px;
   text-align: center;
-  transition: transform .2s, box-shadow .2s;
 }
-.contact-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
-.contact-card:focus-within { box-shadow: var(--shadow); }
-.contact-card .icon {
+.note-mark {
   width: 52px; height: 52px;
   margin: 0 auto 16px;
   border-radius: 50%;
@@ -260,13 +242,11 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 15px;
+  font-weight: 600;
 }
-.contact-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
-.contact-card p { font-size: 14px; color: var(--text-muted); }
-.contact-card a { color: var(--primary); font-weight: 600; }
-.contact-card a:hover, .contact-card a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
-.contact-card .sub { font-size: 12px; color: #99a3b4; font-weight: 400; }
+.note-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.note-card p { font-size: 14px; color: var(--text-muted); }
 
 /* ---------- 页脚 ---------- */
 .footer {
@@ -282,7 +262,7 @@ a:focus-visible {
 
 /* ---------- 响应式 ---------- */
 @media (max-width: 860px) {
-  .contact-grid { grid-template-columns: 1fr; }
+  .notes-grid { grid-template-columns: 1fr; }
   .nav-links { gap: 20px; }
   .hero h1 { font-size: clamp(36px, 9vw, 54px); }
 }

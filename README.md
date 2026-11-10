@@ -2,20 +2,20 @@
 
 这是我的个人主页源码仓库，通过 GitHub Pages 发布。
 
-- 线上地址：<https://louischenyiqiao.github.io>
-- 仓库地址：<https://github.com/LouisChenYiqiao/LouisChenYiqiao.github.io>
+- 网站仅展示昵称、兴趣与创作内容，不公开个人联系方式。
+- 发布地址可在当前仓库的 **Settings → Pages** 中查看。
 
 ## 目录结构
 
 ```
 .
-├── index.html          # 网站首页（单一页面，含导航、关于与联系区块）
+├── index.html          # 网站首页（含导航、关于与日常创作区块）
 ├── assets/
 │   ├── css/
 │   │   └── style.css   # 全站样式表
 │   ├── js/
 │   │   └── site.js     # 小型交互脚本
-│   └── images/         # 图片素材（个人照片、favicon 等）
+│   └── images/         # 图片素材（背景图、favicon 等）
 ├── docs/               # 维护文档
 │   └── 维护说明.md
 └── README.md
@@ -54,4 +54,4 @@ git push
 
 ## 安全说明
 
-页面使用仅限本站资源的 Content Security Policy，并提供[安全维护说明](docs/维护说明.md#六安全与凭据pat管理)。部署凭据仅保存在仓库外的本地目录中。
+页面使用仅限本站资源的 Content Security Policy。维护方式见[维护说明](docs/维护说明.md)，部署凭据仅保存在仓库外的本地目录中。

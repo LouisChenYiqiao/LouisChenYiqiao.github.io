@@ -12,7 +12,7 @@ REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 # Agent 工作区根目录（仓库的上一级）
 AGENT_ROOT="$(cd "${REPO_ROOT}/.." && pwd)"
 TOKEN_FILE="${AGENT_ROOT}/secrets/github.token"
-REMOTE="https://x-access-token@github.com/LouisChenYiqiao/LouisChenYiqiao.github.io.git"
+REMOTE="$(git -C "$REPO_ROOT" remote get-url origin)"
 
 # 提交信息：可传参，否则使用默认值
 COMMIT_MSG="${1:-更新: $(date '+%Y-%m-%d %H:%M')}"
@@ -30,9 +30,15 @@ if [ -z "$TOKEN" ]; then
 fi
 
 # 将令牌通过一次性 askpass 程序交给 Git，避免它出现在 git 命令参数或远端 URL 中。
-ASKPASS_FILE="$(mktemp "${TMPDIR:-/tmp}/louischenyiqiao-git-askpass.XXXXXX")"
+ASKPASS_FILE="$(mktemp "${TMPDIR:-/tmp}/homepage-git-askpass.XXXXXX")"
 trap 'rm -f "$ASKPASS_FILE"' EXIT
-printf '%s\n' '#!/usr/bin/env bash' 'printf "%s\\n" "$GITHUB_TOKEN"' > "$ASKPASS_FILE"
+cat > "$ASKPASS_FILE" <<'ASKPASS'
+#!/usr/bin/env bash
+case "$1" in
+  *Username*) printf '%s\n' 'x-access-token' ;;
+  *) printf '%s\n' "$GITHUB_TOKEN" ;;
+esac
+ASKPASS
 chmod 700 "$ASKPASS_FILE"
 export GIT_ASKPASS="$ASKPASS_FILE"
 export GIT_TERMINAL_PROMPT=0
@@ -66,4 +72,4 @@ git push "$REMOTE" main:main \
 # push 成功后，将本地 origin/main 引用同步到当前 HEAD（即 push 后的远端状态）
 git update-ref refs/remotes/origin/main HEAD 2>/dev/null || true
 
-echo "✅ 部署完成 → https://louischenyiqiao.github.io"
+echo "✅ 推送完成，请在仓库 Pages 页面查看发布状态。"
