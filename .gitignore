@@ -1,18 +1,18 @@
 # macOS
 .DS_Store
 
-# 本地 Python 预览
+# Local Python preview
 __pycache__/
 *.pyc
 
-# 本地工具状态，不属于网站发布内容
+# Local tool state; excluded from publication
 .quarkclouddrive/
 
-# 备份旧站点（若本地存在）
+# Legacy site backups, if present
 *-mobirise.bak
 project.mobirise
 
-# ===== 密钥与敏感凭据（严防上传）=====
+# ===== Secrets and private credentials =====
 secrets/
 *.token
 *.secret

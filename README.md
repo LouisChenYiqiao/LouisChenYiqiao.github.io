@@ -1,57 +1,53 @@
-# LouisQiao · 个人主页
+# LouisQiao - Personal Homepage
 
-这是我的个人主页源码仓库，通过 GitHub Pages 发布。
+A personal homepage built with HTML, CSS, and JavaScript, published through GitHub Pages.
 
-- 网站仅展示昵称、兴趣与创作内容，不公开个人联系方式。
-- 发布地址可在当前仓库的 **Settings → Pages** 中查看。
+The site shares a nickname, interests, and creative notes without publishing personal contact details. The current publishing address is available under **Settings > Pages** in this repository.
 
-## 目录结构
+## Project structure
 
-```
-.
-├── index.html          # 网站首页（含导航、关于与日常创作区块）
-├── assets/
-│   ├── css/
-│   │   └── style.css   # 全站样式表
-│   ├── js/
-│   │   └── site.js     # 小型交互脚本
-│   └── images/         # 图片素材（背景图、favicon 等）
-├── docs/               # 维护文档
-│   └── 维护说明.md
-└── README.md
+```text
+index.html                     Homepage and navigation
+assets/css/style.css           Site styles
+assets/js/site.js              Small interface enhancements
+assets/images/sunset-walk.jpeg  Background photograph
+assets/images/favicon.svg      Site icon
+docs/maintenance.md            Maintenance guide
+docs/changelog.md              Change history
+scripts/deploy.sh              Deployment helper
 ```
 
-## 技术栈
+## Technology
 
-- 纯手写 HTML + CSS，无任何第三方框架或构建工具依赖。
-- 响应式设计，适配桌面与移动端。
-- 部署在 GitHub Pages。
+- Plain HTML, CSS, and JavaScript, with no framework or build dependencies.
+- Responsive layouts for desktop and mobile screens.
+- GitHub Pages publishing from the root of the `main` branch.
 
-## 本地预览
+## Local preview
 
-无需任何依赖，直接打开 `index.html` 即可；或启动一个本地静态服务器：
+Run this command from the repository root:
 
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-然后访问 <http://localhost:8000>。
+Open <http://127.0.0.1:8000> in a browser.
 
-## 更新与部署
+## Updating the site
 
-1. 修改 `index.html` 或 `assets/` 下的文件。
-2. 提交并推送到 `main` 分支：
+1. Edit `index.html` or the files under `assets/`.
+2. Review the changes, commit them, and push to `main`:
 
 ```bash
 git add -A
-git commit -m "更新内容"
-git push
+git commit -m "Update homepage content"
+git push origin main
 ```
 
-3. GitHub Pages 会自动从 `main` 分支根目录重新发布网站。
+3. Wait for GitHub Pages to finish publishing and check the live site.
 
-详细说明见 [`docs/维护说明.md`](docs/维护说明.md)。
+See the [maintenance guide](docs/maintenance.md) for deployment and troubleshooting details.
 
-## 安全说明
+## Privacy and security
 
-页面使用仅限本站资源的 Content Security Policy。维护方式见[维护说明](docs/维护说明.md)，部署凭据仅保存在仓库外的本地目录中。
+Keep published text, comments, and filenames in English. Do not add personal contact details or identifying account information to the site or its documentation. The Content Security Policy limits resources to the same origin, and deployment credentials stay outside the repository.

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   个人主页样式 · 简洁响应式
+   Personal homepage styles - simple and responsive
    ========================================================================== */
 
 :root {
@@ -22,8 +22,8 @@
 html { scroll-behavior: smooth; scroll-padding-top: 82px; }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-    "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", Arial, sans-serif;
   color: var(--text);
   background: var(--bg);
   line-height: 1.7;
@@ -60,7 +60,7 @@ a:focus-visible {
   padding: 0 24px;
 }
 
-/* ---------- 导航栏 ---------- */
+/* ---------- Navigation ---------- */
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -185,7 +185,7 @@ a:focus-visible {
 .btn-primary:hover { box-shadow: 0 24px 55px rgba(255,255,255,.25); }
 .btn-ghost:hover { background: rgba(255,255,255,.12); }
 
-/* ---------- 通用 section ---------- */
+/* ---------- Shared sections ---------- */
 .section { padding: 90px 0; }
 .section--tinted { background: var(--bg-soft); }
 .section-head { text-align: center; margin-bottom: 56px; }
@@ -208,7 +208,7 @@ a:focus-visible {
   margin: 14px auto 0;
 }
 
-/* ---------- 关于 ---------- */
+/* ---------- About ---------- */
 .about-text {
   max-width: 720px;
   margin: 0 auto;
@@ -220,7 +220,7 @@ a:focus-visible {
   margin-bottom: 16px;
 }
 .about-text p { color: var(--text-muted); margin-bottom: 14px; }
-/* ---------- 日常与创作 ---------- */
+/* ---------- Life and creativity ---------- */
 .notes-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -248,7 +248,7 @@ a:focus-visible {
 .note-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
 .note-card p { font-size: 14px; color: var(--text-muted); }
 
-/* ---------- 页脚 ---------- */
+/* ---------- Footer ---------- */
 .footer {
   background: #1c140d;
   color: rgba(255,255,255,.7);
@@ -260,7 +260,7 @@ a:focus-visible {
 .footer p { margin-top: 8px; }
 .footer a { color: #e8b86a; }
 
-/* ---------- 响应式 ---------- */
+/* ---------- Responsive layout ---------- */
 @media (max-width: 860px) {
   .notes-grid { grid-template-columns: 1fr; }
   .nav-links { gap: 20px; }
